@@ -2,16 +2,24 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int n) {
-        ArrayList<Integer> answer = new ArrayList<>();
-        answer.add(n);
+        ArrayList <Integer> al = new ArrayList <> ();
+        al.add(n);
+
         while(n != 1){
-            if (n % 2==0 ){
-                n = n/2;
-            }else{
-                n = n*3+1;
+
+            if(n % 2 == 0){
+                n /= 2;
             }
-            answer.add(n);
+            else if(n % 2 != 0){
+                n = (3 * n + 1);
+            }
+            al.add(n);
         }
-        return answer.stream().mapToInt(i->i).toArray();
+        int[] answer = new int[al.size()];
+        for(int i = 0; i < answer.length; i ++){
+            answer[i] = al.get(i);
+        }
+
+        return answer;
     }
 }
