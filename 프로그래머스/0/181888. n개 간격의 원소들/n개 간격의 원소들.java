@@ -10,9 +10,10 @@ class Solution {
             
         }
         answer = new int[list.size()];
-        for( int i=0; i<list.size(); i++){
-            answer[i] = list.get(i);
-        }
+int i = 0;
+for (int num : list) {
+    answer[i++] = num;
+}
         return answer;
     }
 }
